@@ -87,6 +87,8 @@ set nofoldenable
 set formatoptions=tcrq
 "设置textwidth
 set tw=80
+"设置backspace,否则兼容模式下退格键不起作
+:set backspace=indent,eol,start
 
 "=======设置pathogen======="
 runtime bundle/vim-pathogen/autoload/pathogen.vim
