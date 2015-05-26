@@ -162,20 +162,14 @@ let Tlist_Exit_OnlyWindow=1
 let g:winManagerWindowLayout='FileExplorer|TagList'
 nmap wm :WMToggle<cr>
 
-"=======加载ctags====="
-if filereadable("tags")
-    set tags=tags
-endif
-
 "=======设置cscope====="
 "关于cscope的快捷键和初始化设置在cscope_maps插件中
 "设定是否使用 quickfix 窗口来显示 cscope 结果
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
-"更新cscope&ctags
+"更新cscope
 nmap <F5> :!find . -iname '*.c' -o -iname '*.h' > cscope.files<CR> 
         \ :!cscope -b -i cscope.files -f cscope.out<CR> 
         \ :cs reset<CR>
-        \ :!ctags -R --c-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+liaS --extra=+q --language-force=c<CR>
 "绑定快捷键查看cscope搜索结果,cw切换至quick fix窗口
 nmap <F6> :cn<cr>
 nmap <F7> :cp<cr>
