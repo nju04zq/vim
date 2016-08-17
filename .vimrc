@@ -90,6 +90,9 @@ set tw=80
 "设置backspace,否则兼容模式下退格键不起作
 :set backspace=indent,eol,start
 
+"======重新打开返回之前编辑位置======"
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm'\"")|else|exe "norm $"|endif|endif  
+
 "=======设置pathogen======="
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
