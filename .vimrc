@@ -33,6 +33,8 @@
 "转换回来
 ":%!xxd -r
 
+let g:go_version_warning = 0
+
 "定义快捷键的前缀，即<Leader>
 let mapleader=";"
 "禁止光标闪烁
@@ -86,7 +88,8 @@ set nofoldenable
 "q：允许使用“gq”命令对注释进行格式化 gq{ gq5j gqG
 set formatoptions=tcrq
 "设置textwidth
-set tw=80
+"set tw=80
+set colorcolumn=81
 "设置backspace,否则兼容模式下退格键不起作
 :set backspace=indent,eol,start
 
@@ -170,7 +173,7 @@ nmap wm :WMToggle<cr>
 "设定是否使用 quickfix 窗口来显示 cscope 结果
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
 "更新cscope
-nmap <F5> :!find . -iname '*.c' -o -iname '*.h' > cscope.files<CR> 
+nmap <F5> :!find . -iname '*.py' -iname '*.c' -o -iname '*.h' > cscope.files<CR> 
         \ :!cscope -b -i cscope.files -f cscope.out<CR> 
         \ :cs reset<CR>
 "绑定快捷键查看cscope搜索结果,cw切换至quick fix窗口
